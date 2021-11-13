@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const Background = ({ children, mainRef, targetRefs = [] }) => {
+const useBackground = ({ mainRef, targetRefs = [] }) => {
   const [inBackground, setInbackGround] = useState(false);
 
   useEffect(() => {
@@ -63,4 +63,4 @@ const Background = ({ children, mainRef, targetRefs = [] }) => {
   return { inBackground };
 };
 
-export default Background;
+export default useBackground;
