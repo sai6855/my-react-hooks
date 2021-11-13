@@ -1,6 +1,6 @@
 import "./styles.css";
 import React, { useRef } from "react";
-import useBackground from "./Background";
+import useBackground from "./Hooks/useBackground";
 
 export default function App() {
   const mainRef = useRef();
