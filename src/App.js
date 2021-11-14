@@ -23,7 +23,7 @@ export default function App() {
           position: "fixed"
         }}
       >
-        <p>header text</p>
+        <p>header text (scroll to see magic)</p>
       </div>
 
       <div style={{ height: "100vh", width: "100%" }}></div>
