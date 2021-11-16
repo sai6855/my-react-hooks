@@ -1,41 +1,23 @@
 import "./styles.css";
-import React, { useRef } from "react";
-import useBackground from "./Hooks/useBackground";
+import React from "react";
+import { BrowserRouter, Route } from "react-router-dom";
+import Background from "./Components/Background";
+import { Switch } from "react-router-dom";
+import Home from "./Components/Home";
 
 export default function App() {
-  const mainRef = useRef();
-  const ref1 = useRef();
-  const ref2 = useRef();
-
-  const { inBackground } = useBackground({
-    mainRef: mainRef,
-    targetRefs: [ref1, ref2]
-  });
-
   return (
     <div className="App">
-      <div
-        ref={mainRef}
-        style={{
-          color: inBackground ? "white" : "black",
-          height: "2rem",
-          width: "100%",
-          position: "fixed"
-        }}
-      >
-        <p>header text (scroll to see magic)</p>
-      </div>
-
-      <div style={{ height: "100vh", width: "100%" }}></div>
-      <div
-        ref={ref2}
-        style={{ height: "100vh", width: "100%", backgroundColor: "black" }}
-      ></div>
-      <div style={{ height: "100vh", width: "100%" }}></div>
-      <div
-        ref={ref1}
-        style={{ height: "100vh", width: "100%", backgroundColor: "black" }}
-      ></div>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/useBackground">
+            <Background />
+          </Route>
+          <Route exact path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
